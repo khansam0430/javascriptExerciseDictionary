@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictionary</title>
+</head>
+<body>
+        <input type="file" id="userInputFile" />
+        <script type="text/javascript">
+        //dictionary exercise
+        //function is getting event to read dictinary file that was provided.
+          function reader(event) {
+            var fileReader = event.target.files[0];
+      
+            if (fileReader) {
+              var r = new FileReader();
+              r.onload = function (e) {
+                var contents = e.target.result;
+                mainEntry(contents);
+              }
+              console.log(r.readAsText(fileReader));
+            } else {
+              alert("Loading failed");
+            }
+          }
+          document.getElementById('userInputFile').addEventListener('change', reader, false);
+      
+    </script>
+</body>
+</html>
